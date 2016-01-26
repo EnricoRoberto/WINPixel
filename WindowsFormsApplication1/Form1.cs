@@ -40,10 +40,8 @@ namespace WindowsFormsApplication1
             strLarghezza = Convert.ToString(this.Width);
             strAltezza = Convert.ToString(this.Height);
             textBox3.Text = strLarghezza + " X " + strAltezza;
-
             button2.Text = "Invisibile";
-
-        }
+         }
         
 
         private void textBox1_TextChanged(object sender, EventArgs e)
