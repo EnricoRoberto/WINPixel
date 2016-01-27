@@ -16,6 +16,8 @@ namespace WindowsFormsApplication1
         public int altezza;
         public bool visibility=true;
 
+        ImpostaGrandezzaForm ImpostaForm = new ImpostaGrandezzaForm();
+
         public WINPixel()
         
         {
@@ -30,8 +32,8 @@ namespace WindowsFormsApplication1
             String strAltezza;
             this.Width = 300;
             this.Height = 300;
-            textBox1.Text = "300";
-            textBox2.Text = "300";
+            textBoxWide.Text = "300";
+            textBoxHeight.Text = "300";
             this.Location = new Point(100, 100);
             
             this.Opacity = 1;
@@ -39,35 +41,30 @@ namespace WindowsFormsApplication1
 
             strLarghezza = Convert.ToString(this.Width);
             strAltezza = Convert.ToString(this.Height);
-            textBox3.Text = strLarghezza + " X " + strAltezza;
             button2.Text = "Invisibile";
          }
         
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-               
 
+            //this.button1_Click(sender,e);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+            private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+            //this.button1_Click(sender, e);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            String strLarghezza;
-            String strAltezza;
-            larghezza = Convert.ToInt32(textBox1.Text);
-            altezza = Convert.ToInt32(textBox2.Text);
-            this.Width = larghezza;
-            this.Height = altezza;
-
-            strLarghezza = Convert.ToString(larghezza);
-            strAltezza = Convert.ToString(altezza);
-            textBox3.Text = strLarghezza +" X "+ strAltezza;
            
+            ImpostaForm.imposta(textBoxHeight.Text, textBoxWide.Text, 300, 300);
+            this.Width = ImpostaForm.larghezza;
+            this.Height = ImpostaForm.altezza;
+
+            textBoxWide.Text = Convert.ToString(ImpostaForm.larghezza);
+            textBoxHeight.Text = Convert.ToString(ImpostaForm.altezza);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,9 +117,8 @@ namespace WindowsFormsApplication1
             if (visibility == true)
             {
                
-                textBox1.Visible = false;
-                textBox2.Visible = false;
-                textBox3.Visible = false;
+                textBoxWide.Visible = false;
+                textBoxHeight.Visible = false;
                 button1.Visible = false;
                 label1.Visible = false;
                 label2.Visible = false;
@@ -135,9 +131,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                textBox1.Visible = true;
-                textBox2.Visible = true;
-                textBox3.Visible = true;
+                textBoxWide.Visible = true;
+                textBoxHeight.Visible = true;
                 button1.Visible = true;
                 label1.Visible = true;
                 label2.Visible = true;
