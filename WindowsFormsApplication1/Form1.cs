@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
         private bool nonNumberEntered = false;
 
         public override Color BackColor { get; set; }
-        public FormBorderStyle FormBorderStyle { get; set; }
+        public new FormBorderStyle FormBorderStyle { get; set; }
 
         public WINPixel()
         
@@ -142,6 +142,10 @@ namespace WindowsFormsApplication1
                 textBoxWide.Visible = false;
                 textBoxHeight.Visible = false;
                 button1.Visible = false;
+                button3.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                button6.Visible = false;
                 label1.Visible = false;
                 label2.Visible = false;
                 label3.Visible = false;
@@ -156,6 +160,10 @@ namespace WindowsFormsApplication1
                 textBoxWide.Visible = true;
                 textBoxHeight.Visible = true;
                 button1.Visible = true;
+                button3.Visible = true;
+                button4.Visible = true;
+                button5.Visible = true;
+                button6.Visible = true;
                 label1.Visible = true;
                 label2.Visible = true;
                 label3.Visible = true;
@@ -346,11 +354,5 @@ namespace WindowsFormsApplication1
             trackBar1.BackColor = Color.Green;
         }
 
-        
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
-    }
 }
