@@ -48,12 +48,30 @@ namespace WindowsFormsApplication1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-            //this.button1_Click(sender,e);
+           
+           //string message = "Puoi inserire solo numeri";
+           //string caption = "Controllo Numeri Inseriti";
+           //MessageBoxButtons buttons = MessageBoxButtons.OK;
+           //DialogResult result;
+
+           /// Displays the MessageBox.
+           //result = MessageBox.Show(message, caption, buttons);
+             
+           //DialogResult = DialogResult.OK;
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            //this.button1_Click(sender, e);
+            //string message = "Puoi inserire solo numeri";
+            //string caption = "Controllo Numeri Inseriti";
+            //MessageBoxButtons buttons = MessageBoxButtons.OK;
+            //DialogResult result;
+
+            /// Displays the MessageBox.
+            //result = MessageBox.Show(message, caption, buttons);
+
+            //DialogResult = DialogResult.OK;
         }
 
         public void button1_Click(object sender, EventArgs e)
