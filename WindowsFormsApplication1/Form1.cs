@@ -20,12 +20,23 @@ namespace WindowsFormsApplication1
         DataInsertionCeck DataCeck = new DataInsertionCeck();
         private bool nonNumberEntered = false;
 
+        public override Color BackColor { get; set; }
+        public FormBorderStyle FormBorderStyle { get; set; }
+
         public WINPixel()
         
         {
             InitializeComponent();
-            
-        }
+            label1.ForeColor = Color.Black;
+            label2.ForeColor = Color.Black;
+            label3.ForeColor = Color.Black;
+            button1.ForeColor = Color.Black;
+            button2.ForeColor = Color.Black;
+            button3.ForeColor = Color.Black;
+            button4.ForeColor = Color.Black;
+            button5.ForeColor = Color.Black;
+            button6.ForeColor = Color.Black;
+         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -307,13 +318,38 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            this.ForeColor = Color.Red;
+            this.BackColor = Color.Red;
+            trackBar1.BackColor = Color.Red;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-            
+            this.ForeColor = Color.Yellow;
+            this.BackColor = Color.Yellow;
+            trackBar1.BackColor = Color.Yellow;
+          
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.ForeColor = Color.Blue;
+            this.BackColor = Color.Blue;
+            trackBar1.BackColor = Color.Blue;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.ForeColor = Color.Green;
+            this.BackColor = Color.Green;
+            trackBar1.BackColor = Color.Green;
+        }
+
+        
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }
