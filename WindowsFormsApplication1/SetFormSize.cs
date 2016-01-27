@@ -6,24 +6,28 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class ImpostaGrandezzaForm
+    /// <summary>
+    /// Converte due stringhe in due int, con un valore massimo impostabile
+    /// I valori risultanti sono su variabili globali
+    /// </summary>
+    class SetFormSize
     {
         public int larghezza;
         public int altezza;
 
-        public void imposta(String h, String l, int maxh, int maxl)
+        public void imposta(String h, String l, int minh, int minl)
         {
             altezza = Convert.ToInt32(h);
             larghezza = Convert.ToInt32(l);
 
-            if (altezza < maxh)
+            if (altezza < minh)
             {
-                altezza = maxh;
+                altezza = minh;
             }
 
-            if (larghezza < maxl)
+            if (larghezza < minl)
             {
-                larghezza = maxl;
+                larghezza = minl;
             }
         }
     }

@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         public int altezza;
         public bool visibility=true;
 
-        ImpostaGrandezzaForm ImpostaForm = new ImpostaGrandezzaForm();
+        SetFormSize ImpostaForm = new SetFormSize();
 
         public WINPixel()
         
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             //this.button1_Click(sender,e);
         }
 
-            private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
             //this.button1_Click(sender, e);
         }
