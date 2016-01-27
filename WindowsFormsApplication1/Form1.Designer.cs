@@ -38,6 +38,10 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +64,9 @@
             this.textBoxWide.Size = new System.Drawing.Size(81, 20);
             this.textBoxWide.TabIndex = 1;
             this.textBoxWide.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxWide.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxWide_KeyDown);
+            this.textBoxWide.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxWide_KeyPress);
+            this.textBoxWide.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxWide_KeyUp);
             // 
             // textBoxHeight
             // 
@@ -69,6 +76,9 @@
             this.textBoxHeight.Size = new System.Drawing.Size(81, 20);
             this.textBoxHeight.TabIndex = 2;
             this.textBoxHeight.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxHeight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxHeight_KeyDown);
+            this.textBoxHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeight_KeyPress);
+            this.textBoxHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxHeight_KeyUp);
             // 
             // label1
             // 
@@ -139,12 +149,54 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 234);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Gi";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(53, 234);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(37, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Bl";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(97, 234);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(37, 23);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Ve";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(143, 234);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(37, 23);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Ro";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // WINPixel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(436, 331);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox4);
@@ -155,13 +207,14 @@
             this.Controls.Add(this.textBoxWide);
             this.Controls.Add(this.button1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WINPixel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WINPixel";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.WINPixel_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,6 +232,10 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
 
