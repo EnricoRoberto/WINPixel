@@ -7,11 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApplication1
 {
     public partial class WINPixel : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+                         int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
         public int larghezza;
         public int altezza;
         public bool visibility=true;
@@ -21,6 +30,7 @@ namespace WindowsFormsApplication1
         private bool nonNumberEntered = false;
 
         public override Color BackColor { get; set; }
+        
        
 
         public WINPixel()
@@ -342,7 +352,22 @@ namespace WindowsFormsApplication1
             trackBar1.BackColor = Color.Green;
         }
 
-        private void WINPixel_Click(object sender, EventArgs e)
+
+
+        private void WINPixel_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+
+            if  (this.FormBorderStyle == FormBorderStyle.None)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    ReleaseCapture();
+                    SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                }
+            }
+        }
+      
+        private void WINPixel_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (this.FormBorderStyle == FormBorderStyle.None)
             {
