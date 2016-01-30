@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
         private bool nonNumberEntered = false;
 
         public override Color BackColor { get; set; }
-        public new FormBorderStyle FormBorderStyle { get; set; }
+       
 
         public WINPixel()
         
@@ -63,19 +63,7 @@ namespace WindowsFormsApplication1
         
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            //string message = "Puoi inserire solo numeri";
-            //string caption = "Controllo Numeri Inseriti";
-            //MessageBoxButtons buttons = MessageBoxButtons.OK;
-            //DialogResult result;
-
-            /// Displays the MessageBox.
-            //result = MessageBox.Show(message, caption, buttons);
-
-            //DialogResult = DialogResult.OK;
-            
-            
-          
-            
+                        
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -354,5 +342,20 @@ namespace WindowsFormsApplication1
             trackBar1.BackColor = Color.Green;
         }
 
+        private void WINPixel_Click(object sender, EventArgs e)
+        {
+            if (this.FormBorderStyle == FormBorderStyle.None)
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.Width = this.Width - 16;
+                this.Height = this.Height - 39;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.Width = this.Width + 16;
+                this.Height = this.Height + 39;
+            }
         }
+    }
 }
