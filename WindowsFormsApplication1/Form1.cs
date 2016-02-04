@@ -373,13 +373,13 @@ namespace WindowsFormsApplication1
             {
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.Width = this.Width - 16;
-                this.Height = this.Height - 39;
+                this.Height = this.Height - 38;
             }
             else
             {
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.Width = this.Width + 16;
-                this.Height = this.Height + 39;
+                this.Height = this.Height + 38;
             }
         }
     }
