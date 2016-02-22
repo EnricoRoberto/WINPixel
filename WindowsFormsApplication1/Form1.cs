@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Timers;
 
 namespace WindowsFormsApplication1
 {
@@ -17,21 +18,22 @@ namespace WindowsFormsApplication1
         public const int HT_CAPTION = 0x2;
 
         [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd,
-                         int Msg, int wParam, int lParam);
+        public static extern int SendMessage(IntPtr hWnd,int Msg, int wParam, int lParam);
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
         public int larghezza;
         public int altezza;
         public bool visibility=true;
-
+       
         SetFormSize ImpostaForm = new SetFormSize();
         DataInsertionCeck DataCeck = new DataInsertionCeck();
         private bool nonNumberEntered = false;
-
-        public override Color BackColor { get; set; }
         
-       
+        public override Color BackColor { get; set; }
+
+        static int valore=0;
+
+        private volatile bool _shouldStop;
 
         public WINPixel()
         
@@ -46,7 +48,7 @@ namespace WindowsFormsApplication1
             button4.ForeColor = Color.Black;
             button5.ForeColor = Color.Black;
             button6.ForeColor = Color.Black;
-         }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -65,8 +67,15 @@ namespace WindowsFormsApplication1
             strLarghezza = Convert.ToString(this.Width);
             strAltezza = Convert.ToString(this.Height);
             button2.Text = "Invisibile";
-         }
-        
+
+            timer1.Interval = 500;
+            timer1.Enabled = true;
+                        
+
+    }
+
+      
+               
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
@@ -327,6 +336,7 @@ namespace WindowsFormsApplication1
             this.ForeColor = Color.Red;
             this.BackColor = Color.Red;
             trackBar1.BackColor = Color.Red;
+            timer1.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -335,7 +345,7 @@ namespace WindowsFormsApplication1
             this.ForeColor = Color.Yellow;
             this.BackColor = Color.Yellow;
             trackBar1.BackColor = Color.Yellow;
-          
+            timer1.Enabled = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -343,6 +353,7 @@ namespace WindowsFormsApplication1
             this.ForeColor = Color.Blue;
             this.BackColor = Color.Blue;
             trackBar1.BackColor = Color.Blue;
+            timer1.Enabled = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -350,6 +361,7 @@ namespace WindowsFormsApplication1
             this.ForeColor = Color.Green;
             this.BackColor = Color.Green;
             trackBar1.BackColor = Color.Green;
+            timer1.Enabled = false;
         }
 
 
@@ -382,5 +394,99 @@ namespace WindowsFormsApplication1
                 this.Height = this.Height + 38;
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            OnTimedEvent();
+        }
+
+
+
+        private void OnTimedEvent()
+        {
+            valore = valore + 1;
+            Console.WriteLine("Valore:   " + valore);
+            // Limiti
+            if (valore >= 100)
+            {
+                valore = 0;
+            }
+        
+            /// 1° giro
+            if (valore >= 0 & valore < 5)
+            {
+                this.ForeColor = Color.Red;
+                this.BackColor = Color.Red;
+                trackBar1.BackColor = Color.Red;
+            }
+
+            if (valore >= 6 & valore < 10)
+            {
+            this.ForeColor = Color.Yellow;
+            this.BackColor = Color.Yellow;
+            trackBar1.BackColor = Color.Yellow;
+            }
+
+            if (valore >= 11 & valore < 20)
+            {
+                this.ForeColor = Color.Blue;
+                this.BackColor = Color.Blue;
+                trackBar1.BackColor = Color.Blue;
+            }
+            if (valore >= 21 & valore <30)
+            {
+                this.ForeColor = Color.Green;
+                this.BackColor = Color.Green;
+                trackBar1.BackColor = Color.Green;
+            }
+
+            /// 2° giro
+            if (valore >=31 & valore <40)
+            {
+                this.ForeColor = Color.Red;
+                this.BackColor = Color.Red;
+                trackBar1.BackColor = Color.Red;
+            }
+
+            if (valore >=41 & valore < 50)
+            {
+                this.ForeColor = Color.Yellow;
+                this.BackColor = Color.Yellow;
+                trackBar1.BackColor = Color.Yellow;
+            }
+
+            if (valore >= 51 & valore < 60)
+            {
+                this.ForeColor = Color.Blue;
+                this.BackColor = Color.Blue;
+                trackBar1.BackColor = Color.Blue;
+            }
+            if (valore >= 61 & valore < 70)
+            {
+                this.ForeColor = Color.Green;
+                this.BackColor = Color.Green;
+                trackBar1.BackColor = Color.Green;
+            }
+
+            /// 3° giro
+            /// 
+            if (valore >= 81 & valore < 90)
+            {
+                this.ForeColor = Color.Red;
+                this.BackColor = Color.Red;
+                trackBar1.BackColor = Color.Red;
+            }
+
+            if (valore >= 91 & valore <100)
+            {
+                this.ForeColor = Color.Yellow;
+                this.BackColor = Color.Yellow;
+                trackBar1.BackColor = Color.Yellow;
+            }
+
+        }
+
+       
     }
 }
